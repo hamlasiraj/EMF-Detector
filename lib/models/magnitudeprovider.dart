@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:emf_detector/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:sensors_plus/sensors_plus.dart';
@@ -27,13 +28,16 @@ class MagnitudeController extends ChangeNotifier {
       showDialog(
           context: context,
           builder: (context) {
-            return const AlertDialog(
-              title: Text("Sensor Not Found"),
-              titleTextStyle:
-                  TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              content: Text(
+            return AlertDialog(
+              title: const Text("Sensor Not Found"),
+              titleTextStyle: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.black),
+              content: const Text(
                   "It seems that your device doesn't support Magnetometer Sensor"),
-              contentTextStyle: TextStyle(fontWeight: FontWeight.w600),
+              contentTextStyle: TextStyle(
+                  fontWeight: FontWeight.w600, color: AppColors.black),
             );
           });
     }, cancelOnError: true);
